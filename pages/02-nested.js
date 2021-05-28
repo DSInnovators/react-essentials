@@ -29,6 +29,8 @@ function ChildComponent({ parentCount }) {
 
   return (
     <div className="child-comp">
+      Parent Counter: {parentCount}
+      <br/>
       Counter: {count}
       <br/>
       <button onClick={() => setCount(count + 1)}>+</button>
