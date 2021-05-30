@@ -1,9 +1,12 @@
 // 03-nested-2-memo
+// noinspection DuplicatedCode
+
 import React, { useCallback, useState } from 'react'
-import ChildCounter from '../components/child-counter'
 import ChildUpdater from '../components/child-updater-name'
 
 function ParentComponent() {
+  // LEARNING POINT: "setRedCount" or "setBlueCount" will not change on each render
+  // (call of ParentComponent).
   const [redCount, setRedCount] = useState(0)
   const [blueCount, setBlueCount] = useState(100)
 
@@ -14,6 +17,8 @@ function ParentComponent() {
     setBlueCount(0)
   }
 
+  // LEARNING POINT: A new copy of this closure (function) is created on every
+  // render (call of ParentComponent).
   function incrementRedCount() {
     setRedCount(redCount + 1)
   }
@@ -32,6 +37,7 @@ function ParentComponent() {
 
   // fix callbacks
 
+  // LEARNING POINT: incRed will change only if redCount changes
   const incRed = useCallback(incrementRedCount, [redCount])
   const decRed = useCallback(decrementRedCount, [redCount])
 

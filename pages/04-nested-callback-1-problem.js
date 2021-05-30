@@ -1,6 +1,7 @@
 // 03-nested-2-memo
+// noinspection DuplicatedCode
+
 import React, { useState } from 'react'
-import ChildCounter from '../components/child-counter'
 import ChildUpdater from '../components/child-updater-name'
 
 function ParentComponent() {

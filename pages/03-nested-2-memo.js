@@ -1,4 +1,6 @@
 // 03-nested-2-memo
+// noinspection DuplicatedCode
+
 import React, { useState } from 'react'
 
 function ParentComponent() {
